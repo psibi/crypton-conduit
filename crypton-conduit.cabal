@@ -1,6 +1,6 @@
 Name:                crypton-conduit
 version:             0.2.2
-Synopsis:            cryptonite conduit
+Synopsis:            crypton conduit
 Description:
   Conduit bridge for crypton
   .
@@ -15,7 +15,7 @@ Maintainer:          vincent@snarc.org
 Category:            Cryptography, Conduit
 Stability:           experimental
 Build-Type:          Simple
-Homepage:            https://github.com/haskell-crypto/cryptonite-conduit
+Homepage:            https://github.com/psibi/cryptonite-conduit
 Cabal-Version:       >=1.8
 Extra-source-files:  README.md CHANGELOG.md
 
@@ -43,7 +43,7 @@ test-suite crypton-conduit-test
                      , bytestring
                      , conduit
                      , conduit-combinators
-                     , cryptonite
+                     , crypton
                      , crypton-conduit
                      , memory
                      , tasty
@@ -53,4 +53,4 @@ test-suite crypton-conduit-test
 
 source-repository head
   type: git
-  location: https://github.com/haskell-crypto/cryptonite-conduit
+  location: https://github.com/psibi/crypton-conduit
