@@ -1,8 +1,8 @@
-Name:                cryptonite-conduit
+Name:                crypton-conduit
 version:             0.2.2
 Synopsis:            cryptonite conduit
 Description:
-  Conduit bridge for cryptonite
+  Conduit bridge for crypton
   .
   For now only provide a conduit version for hash and hmac, but
   with contribution, this could provide cipher conduits too,
@@ -28,14 +28,14 @@ Library
                    , bytestring
                    , conduit
                    , conduit-extra
-                   , cryptonite
+                   , crypton
                    , exceptions
                    , memory
                    , resourcet
                    , transformers
   ghc-options:       -Wall -fwarn-tabs
 
-test-suite cryptonite-conduit-test
+test-suite crypton-conduit-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
@@ -44,7 +44,7 @@ test-suite cryptonite-conduit-test
                      , conduit
                      , conduit-combinators
                      , cryptonite
-                     , cryptonite-conduit
+                     , crypton-conduit
                      , memory
                      , tasty
                      , tasty-hunit

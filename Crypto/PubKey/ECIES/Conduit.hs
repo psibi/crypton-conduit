@@ -56,11 +56,7 @@ encrypt point = do
   yield $ ECC.encodePoint proxy point'
   ChaCha.encrypt nonce key
   where
-#if MIN_VERSION_cryptonite(0,23,999)
     deriveEncryptCompat prx p = deriveEncrypt prx p
-#else
-    deriveEncryptCompat prx p = CE.CryptoPassed <$> deriveEncrypt prx p
-#endif
 
 decrypt
   :: (MonadThrow m)
@@ -73,8 +69,4 @@ decrypt scalar = do
   let (_nonce, key) = getNonceKey shared
   ChaCha.decrypt key
   where
-#if MIN_VERSION_cryptonite(0,23,999)
     deriveDecryptCompat prx p s = deriveDecrypt prx p s
-#else
-    deriveDecryptCompat prx p s = CE.CryptoPassed (deriveDecrypt prx p s)
-#endif
