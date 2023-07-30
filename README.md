@@ -1,7 +1,6 @@
 crypton-conduit
 ==================
 
-![crypton-conduit](https://user-images.githubusercontent.com/737477/53658993-54575200-3c80-11e9-9125-fbcf9e54660f.png)
 [![Hackage](https://img.shields.io/hackage/v/crypton-conduit.svg)](https://hackage.haskell.org/package/crypton-conduit)
 [![Stackage
 Nightly](http://stackage.org/package/crypton-conduit/badge/nightly)](http://stackage.org/nightly/package/crypton-conduit)
