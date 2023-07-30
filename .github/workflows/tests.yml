@@ -5,6 +5,8 @@ on:
     push:
         branches:
         - master
+        tags:
+        - '*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
   build:
@@ -24,13 +26,21 @@ jobs:
       - name: Clone project
         uses: actions/checkout@v3
 
-      - name: Cache dependencies
+      - name: Cache dependencies on Unix-like OS
+        if: startsWith(runner.os, 'Linux') || startsWith(runner.os, 'macOS')
         uses: actions/cache@v3
         with:
           path: ~/.stack
-          key: ${{ runner.os }}-${{ matrix.resolver }}-${{ hashFiles('stack.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.resolver }}-
+          key: ${{ runner.os }}-${{ hashFiles('stack.yaml') }}
+
+      - name: Cache dependencies on Windows
+        if: startsWith(runner.os, 'Windows')
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~\AppData\Roaming\stack
+            ~\AppData\Local\Programs\stack
+          key: ${{ runner.os }}-${{ hashFiles('stack.yaml') }}
 
       - name: Build and run tests
         shell: bash
@@ -38,3 +48,8 @@ jobs:
             set -ex
             curl -sSL https://get.haskellstack.org/ | sh -s - -f
             stack test --fast --no-terminal --resolver=${{ matrix.resolver }}
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          generate_release_notes: true

@@ -1,8 +1,13 @@
 crypton-conduit
 ==================
 
-[![BSD](http://b.repl.ca/v1/license-BSD-blue.png)](http://en.wikipedia.org/wiki/BSD_licenses)
-[![Haskell](http://b.repl.ca/v1/language-haskell-lightgrey.png)](http://haskell.org)
+![crypton-conduit](https://user-images.githubusercontent.com/737477/53658993-54575200-3c80-11e9-9125-fbcf9e54660f.png)
+[![Hackage](https://img.shields.io/hackage/v/crypton-conduit.svg)](https://hackage.haskell.org/package/crypton-conduit)
+[![Stackage
+Nightly](http://stackage.org/package/crypton-conduit/badge/nightly)](http://stackage.org/nightly/package/crypton-conduit)
+[![Stackage
+LTS](http://stackage.org/package/crypton-conduit/badge/lts)](http://stackage.org/lts/package/crypton-conduit)
+[![Tests](https://github.com/psibi/crypton-conduit/actions/workflows/tests.yml/badge.svg)](https://github.com/psibi/crypton-conduit/actions/workflows/tests.yml)
 
 This is a fork of cryponite-conduit. For more details [see here](https://github.com/yesodweb/wai/pull/931).
 
