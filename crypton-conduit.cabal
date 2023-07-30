@@ -16,7 +16,7 @@ Category:            Cryptography, Conduit
 Stability:           experimental
 Build-Type:          Simple
 Homepage:            https://github.com/psibi/crypton-conduit
-Cabal-Version:       >=1.8
+Cabal-Version:       >= 1.10
 Extra-source-files:  README.md CHANGELOG.md
 
 Library
