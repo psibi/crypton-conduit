@@ -1,5 +1,5 @@
 Name:                crypton-conduit
-version:             0.2.2
+version:             0.2.3
 Synopsis:            crypton conduit
 Description:
   Conduit bridge for crypton
@@ -11,11 +11,11 @@ License:             BSD3
 License-file:        LICENSE
 Copyright:           Vincent Hanquez <vincent@snarc.org>
 Author:              Vincent Hanquez <vincent@snarc.org>
-Maintainer:          vincent@snarc.org
+Maintainer:          Sibi Prabakaran <sibi@psibi.in>
 Category:            Cryptography, Conduit
 Stability:           experimental
 Build-Type:          Simple
-Homepage:            https://github.com/psibi/cryptonite-conduit
+Homepage:            https://github.com/psibi/crypton-conduit
 Cabal-Version:       >=1.8
 Extra-source-files:  README.md CHANGELOG.md
 
