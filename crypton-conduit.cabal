@@ -43,7 +43,6 @@ test-suite crypton-conduit-test
   build-depends:       base
                      , bytestring
                      , conduit
-                     , conduit-combinators
                      , crypton
                      , crypton-conduit
                      , memory
