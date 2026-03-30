@@ -1,0 +1,5 @@
+snapshot: nightly-2026-03-30 # GHC 9.12.4
+
+extra-deps:
+# nightly-2026-03-20 provides crypton-1.0.6, which depends on memory
+- crypton-1.1.2@sha256:98681a0ac0c09adda61469354e0853deaf21ff1a2234d6294fdb0e9a5d2f976d,15142

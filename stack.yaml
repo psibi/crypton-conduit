@@ -1,7 +1,6 @@
-resolver: lts-20.26
-
-packages:
-- '.'
+snapshot: lts-24.35 # GHC 9.10.3
 
 extra-deps:
-- crypton-0.33@sha256:5e92f29b9b7104d91fcdda1dec9400c9ad1f1791c231cc41ceebd783fb517dee,18202
+# lts-24.35 provides crypton-1.0.6, which depends on memory
+- crypton-1.1.2@sha256:98681a0ac0c09adda61469354e0853deaf21ff1a2234d6294fdb0e9a5d2f976d,15142
+- ram-0.22.0@sha256:f6ce64a025929eb6ce42deeb80d072960a9ea2d83b9b9b28de668cc2b623127c,2814

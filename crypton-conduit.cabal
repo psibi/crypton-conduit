@@ -1,5 +1,5 @@
 Name:                crypton-conduit
-version:             0.2.3
+version:             0.3.0
 Synopsis:            crypton conduit
 Description:
   Conduit bridge for crypton
@@ -28,9 +28,9 @@ Library
                    , bytestring
                    , conduit
                    , conduit-extra
-                   , crypton
+                   , crypton >= 1.1.0
                    , exceptions
-                   , memory
+                   , ram
                    , resourcet
                    , transformers
   ghc-options:       -Wall -fwarn-tabs
@@ -44,9 +44,9 @@ test-suite crypton-conduit-test
                      , bytestring
                      , conduit
                      , conduit-combinators
-                     , crypton
+                     , crypton >= 1.1.0
                      , crypton-conduit
-                     , memory
+                     , ram
                      , tasty
                      , tasty-hunit
                      , tasty-quickcheck

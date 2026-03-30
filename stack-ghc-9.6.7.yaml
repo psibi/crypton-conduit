@@ -1,0 +1,8 @@
+snapshot: lts-22.44 # GHC 9.6.7
+
+extra-deps:
+# lts-22.44 provides crypton-0.34, which depends on memory
+- crypton-1.1.2@sha256:98681a0ac0c09adda61469354e0853deaf21ff1a2234d6294fdb0e9a5d2f976d,15142
+# lts-22.44 provides primitive-0.8.0.0
+- primitive-0.9.1.0@sha256:756b222c715bc6ef5ba81fa69cdbaa20c5c53beb6f16f174b8bacc93a6d239f0,3258
+- ram-0.22.0@sha256:f6ce64a025929eb6ce42deeb80d072960a9ea2d83b9b9b28de668cc2b623127c,2814
