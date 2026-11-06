@@ -1,4 +1,6 @@
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE CPP #-}
+
 module Crypto.Cipher.ChaChaPoly1305.Conduit
   ( encrypt
   , decrypt
@@ -34,6 +36,19 @@ data ChaChaException
   deriving (Show, Typeable)
 instance Exception ChaChaException
 
+initialize
+  :: MonadThrow m
+  => Cha.Nonce
+  -> ByteString
+  -> m Cha.State
+initialize nonce key = do
+#if MIN_VERSION_crypton(2,1,0)
+  key' <- cf DecryptKeyException $ Cha.key key
+  pure $ Cha.initialize key' nonce
+#else
+  cf EncryptKeyException $ Cha.initialize key nonce
+#endif
+
 encrypt
   :: MonadThrow m
   => ByteString -- ^ nonce (12 random bytes)
@@ -41,7 +56,7 @@ encrypt
   -> ConduitM ByteString ByteString m ()
 encrypt nonceBS key = do
   nonce <- cf EncryptNonceException $ Cha.nonce12 nonceBS
-  state0 <- cf EncryptKeyException $ Cha.initialize key nonce
+  state0 <- initialize nonce key
   yield nonceBS
   let loop state1 = do
         mbs <- await
@@ -60,7 +75,7 @@ decrypt
 decrypt key = do
   nonceBS <- CB.take 12
   nonce <- cf DecryptNonceException $ Cha.nonce12 $ BL.toStrict nonceBS
-  state0 <- cf DecryptKeyException $ Cha.initialize key nonce
+  state0 <- initialize nonce key
   let loop state1 = do
         ebs <- awaitExcept16 id
         case ebs of
