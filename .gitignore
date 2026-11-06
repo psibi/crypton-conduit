@@ -4,3 +4,4 @@
 *.mix
 dist
 /.stack-work/
+dist-newstyle
