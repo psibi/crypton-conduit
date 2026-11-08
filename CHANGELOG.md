@@ -1,3 +1,7 @@
+## 0.3.1
+
+* Fix dependency issues: https://github.com/psibi/crypton-conduit/issues/5
+
 ## 0.3.0
 
 * Depend on package `ram` (rather than `memory`) and, consequently, on
